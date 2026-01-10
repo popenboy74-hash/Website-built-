@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="description" content="A proposal website for Basit Chishti — with football & Ronaldo vibes." />
+    <title>Basit Chishti — A Question for You</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar" role="banner">
+      <div class="topbar__inner">
+        <div class="brand" aria-label="Site title">
+          <span class="brand__badge" aria-hidden="true">7</span>
+          <span class="brand__text">Forever Team</span>
+        </div>
+        <div class="topbar__actions">
+          <button id="toggleMode" class="chip" type="button" aria-pressed="false">
+            <span class="chip__dot" aria-hidden="true"></span>
+            Ronaldo Mode
+          </button>
+          <button id="soundBtn" class="chip" type="button" aria-pressed="false">
+            Stadium Sound
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="page" role="main">
+      <section class="hero" aria-label="Intro">
+        <div class="bg-orbs" aria-hidden="true">
+          <span class="orb orb--a"></span>
+          <span class="orb orb--b"></span>
+          <span class="orb orb--c"></span>
+        </div>
+
+        <div class="hero__inner">
+          <div class="card">
+            <p class="eyebrow">Basit Chishti</p>
+            <h1 class="title">
+              I made this for you.
+              <span class="title__sub">One question. One big moment.</span>
+            </h1>
+
+            <p class="subtitle" id="typeLine" aria-live="polite">
+              Ready for your highlight of the season?
+            </p>
+
+            <div class="cta">
+              <a class="btn btn--primary" href="#question">Kick off</a>
+              <button id="previewBtn" class="btn btn--ghost" type="button">
+                Watch the “reel”
+              </button>
+            </div>
+
+            <div class="meta">
+              <span class="pill" aria-label="Theme">
+                <span class="pill__icon" aria-hidden="true">⚽</span>
+                Football vibes
+              </span>
+              <span class="pill" aria-label="Energy">
+                <span class="pill__icon" aria-hidden="true">🏟️</span>
+                Big-game energy
+              </span>
+              <span class="pill" aria-label="Mood">
+                <span class="pill__icon" aria-hidden="true">💍</span>
+                Life moment
+              </span>
+            </div>
+          </div>
+
+          <div class="hero__side" aria-hidden="true">
+            <div class="crest">
+              <div class="crest__ring"></div>
+              <div class="crest__inner">
+                <div class="crest__num">7</div>
+                <div class="crest__text">SIUUU</div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat__label">Chemistry</div>
+              <div class="stat__bar"><span class="stat__fill" style="--v: 0.94"></span></div>
+            </div>
+            <div class="stat">
+              <div class="stat__label">Commitment</div>
+              <div class="stat__bar"><span class="stat__fill" style="--v: 0.99"></span></div>
+            </div>
+            <div class="stat">
+              <div class="stat__label">Forever</div>
+              <div class="stat__bar"><span class="stat__fill" style="--v: 1"></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="question" aria-label="The question">
+        <div class="section__inner">
+          <div class="panel">
+            <h2 class="h2">Basit…</h2>
+            <p class="lead">
+              Will you marry me and be my forever teammate?
+              <span class="muted">(No pressure… but I did bring the confetti.)</span>
+            </p>
+
+            <div class="buttons" aria-label="Answer buttons">
+              <button id="yesBtn" class="btn btn--primary btn--lg" type="button">
+                Yes! 💍
+              </button>
+              <button id="noBtn" class="btn btn--danger btn--lg" type="button">
+                No 🙈
+              </button>
+            </div>
+
+            <div class="mini">
+              <p class="mini__line">
+                <span class="tag">Fun fact</span>
+                You can try pressing “No”… but it’s going to play defense.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid" aria-label="Highlight reel">
+            <article class="tile">
+              <h3 class="h3">Our highlight reel</h3>
+              <ol class="timeline">
+                <li>
+                  <span class="timeline__dot" aria-hidden="true"></span>
+                  <div class="timeline__body">
+                    <div class="timeline__title">First hello</div>
+                    <div class="timeline__text">The moment everything started feeling easy.</div>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline__dot" aria-hidden="true"></span>
+                  <div class="timeline__body">
+                    <div class="timeline__title">My favorite laugh</div>
+                    <div class="timeline__text">The one that makes any day instantly better.</div>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline__dot" aria-hidden="true"></span>
+                  <div class="timeline__body">
+                    <div class="timeline__title">Your Ronaldo energy</div>
+                    <div class="timeline__text">Relentless. Confident. Always leveling up.</div>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline__dot" aria-hidden="true"></span>
+                  <div class="timeline__body">
+                    <div class="timeline__title">This moment</div>
+                    <div class="timeline__text">The one I want to remember forever.</div>
+                  </div>
+                </li>
+              </ol>
+              <p class="small muted">
+                Want to personalize these? Open <code>index.html</code> and replace the timeline
+                text with your own memories.
+              </p>
+            </article>
+
+            <article class="tile">
+              <h3 class="h3">The promise</h3>
+              <ul class="promise">
+                <li><span aria-hidden="true">🤍</span> I’ll be your calm in every extra time.</li>
+                <li><span aria-hidden="true">🫶</span> Your loudest fan in every stadium.</li>
+                <li><span aria-hidden="true">🌙</span> Your safe place, every night.</li>
+                <li><span aria-hidden="true">🏆</span> Your partner—through every win and lesson.</li>
+              </ul>
+              <div class="signature" aria-label="Signature">
+                <div class="signature__line"></div>
+                <div class="signature__name">— With all my love</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="footer" aria-label="Footer">
+        <div class="footer__inner">
+          <p class="footer__text">
+            Made with love for <strong>Basit Chishti</strong>. Press <kbd>Y</kbd> for “Yes”.
+          </p>
+          <p class="footer__text muted">
+            Tip: If you want to host it, you can use GitHub Pages.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal__backdrop" data-close="true"></div>
+      <div class="modal__panel" role="document" aria-label="Highlight reel modal">
+        <button class="modal__close" type="button" aria-label="Close" data-close="true">
+          ×
+        </button>
+        <h2 class="h2">Tonight’s match plan</h2>
+        <div class="reel">
+          <div class="reel__item">
+            <div class="reel__label">Kickoff</div>
+            <div class="reel__text">A deep breath, a smile, and you.</div>
+          </div>
+          <div class="reel__item">
+            <div class="reel__label">Goal</div>
+            <div class="reel__text">One “Yes” that changes everything.</div>
+          </div>
+          <div class="reel__item">
+            <div class="reel__label">Celebration</div>
+            <div class="reel__text">Confetti + “SIUUU” + the happiest hug.</div>
+          </div>
+        </div>
+        <div class="modal__actions">
+          <a class="btn btn--primary" href="#question" data-close="true">Back to the question</a>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+    <audio id="stadiumAudio" preload="none">
+      <!-- Tiny generated tone sequence (no external file). -->
+      <source src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQAAAAA=" type="audio/wav" />
+    </audio>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
