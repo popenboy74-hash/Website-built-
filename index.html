@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#ffb3d9" />
+    <meta name="description" content="A romantic apology for Ariba — made with love." />
+    <title>For Ariba 💗</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Allura&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="bg">
+      <div class="bg__glow bg__glow--a"></div>
+      <div class="bg__glow bg__glow--b"></div>
+      <div class="bg__glow bg__glow--c"></div>
+      <div class="bg__noise" aria-hidden="true"></div>
+      <div class="bg__sparkles" aria-hidden="true"></div>
+    </div>
+
+    <canvas id="fx" class="fx" aria-hidden="true"></canvas>
+
+    <header class="topbar" aria-label="Controls">
+      <button id="musicToggle" class="chip chip--icon" type="button" aria-label="Toggle music" title="Music">
+        <span class="chip__icon" aria-hidden="true">♪</span>
+        <span id="musicLabel" class="chip__text">Muted</span>
+      </button>
+    </header>
+
+    <main class="app" id="app">
+      <!-- Scene 1 -->
+      <section class="modal-layer" id="scene1" aria-label="Scene 1">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="s1-title">
+          <div class="modal__badge">My Love Letter</div>
+          <h1 id="s1-title" class="modal__title handwritten">
+            My Bebo 🥺💖
+            <span class="modal__title-sub">Are you sad with me?</span>
+          </h1>
+
+          <p id="s1-tease" class="modal__hint" aria-live="polite"></p>
+
+          <div class="modal__actions">
+            <button id="btnYes" class="btn btn--primary" type="button">YES 😔</button>
+            <button id="btnNo" class="btn btn--ghost" type="button">NO 😌</button>
+          </div>
+
+          <div class="modal__fineprint">Tap anywhere to start the magic (and music).</div>
+        </div>
+      </section>
+
+      <!-- Scene 2 -->
+      <section class="modal-layer is-hidden" id="scene2" aria-label="Scene 2">
+        <div class="modal modal--soft" role="dialog" aria-modal="true" aria-labelledby="s2-title">
+          <div class="modal__badge">Bebo Verified</div>
+          <h2 id="s2-title" class="modal__title handwritten">That’s why you are MY BEBO 💗✨</h2>
+          <div class="modal__actions">
+            <button id="btnOkay" class="btn btn--primary" type="button">Okay 💞</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scene 3 -->
+      <section class="stage stage--letter is-hidden" id="letterStage" aria-label="Apology letter">
+        <div class="stage__backdrop" aria-hidden="true"></div>
+        <article class="letter" id="letterCard">
+          <div class="letter__top">
+            <div class="letter__seal" aria-hidden="true">💌</div>
+            <div class="letter__meta">
+              <div class="letter__to handwritten">To: Ariba</div>
+              <div class="letter__from">from: your sorry heart</div>
+            </div>
+          </div>
+
+          <div class="letter__body" id="letterText">
+            <p>Hey my Ariba 💕,</p>
+            <p>
+              I know I spoke rudely,<br />
+              and I know it hurt you…<br />
+              and for that, I am truly sorry 🥺💔
+            </p>
+            <p>
+              You are not just someone I love,<br />
+              you are someone I care for deeply 🌷<br />
+              Every smile of yours matters to me,<br />
+              every tear of yours breaks me inside.
+            </p>
+            <p>
+              Sometimes I act stupid,<br />
+              sometimes I speak without thinking 😞<br />
+              but please believe me —<br />
+              my heart never wants to hurt YOU.
+            </p>
+            <p>
+              You are my comfort,<br />
+              my peace,<br />
+              my favorite person 💖✨
+            </p>
+            <p>
+              If I could, I would:<br />
+              ✔️ Take back my words<br />
+              ✔️ Hold your hands tightly<br />
+              ✔️ Say sorry while looking into your eyes
+            </p>
+            <p>
+              Thank you for being patient with me,<br />
+              thank you for being MY BEBO 💫
+            </p>
+            <p>
+              I love you… more than my ego,<br />
+              more than my mistakes,<br />
+              more than my pride 🥹💗
+            </p>
+          </div>
+
+          <div class="letter__actions">
+            <button id="btnSurprise" class="btn btn--glow" type="button">Open Your Surprise 🎁</button>
+          </div>
+        </article>
+      </section>
+
+      <!-- Scene 4 -->
+      <section class="stage stage--gifts is-hidden" id="giftStage" aria-label="Gift game">
+        <div class="stage__header">
+          <h2 class="stage__title handwritten">Pick a gift, Bebo 🎀</h2>
+          <p class="stage__subtitle">Any one. Go on. I’m smiling already.</p>
+        </div>
+
+        <div class="gift-grid" id="giftGrid" role="grid" aria-label="Gift boxes"></div>
+
+        <div class="popup is-hidden" id="giftPopup" role="dialog" aria-modal="true" aria-labelledby="giftPopupTitle">
+          <div class="popup__card">
+            <h3 id="giftPopupTitle" class="popup__title handwritten">I was kidding 😜</h3>
+            <p class="popup__text">
+              Every box has the same surprise 💖<br /><br />
+              <span class="popup__big">🎉 YOU WON A COMPLETE OUTFIT 🎉</span>
+            </p>
+            <button id="btnPopupOk" class="btn btn--primary" type="button">Aww okay 💗</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scene 5 -->
+      <section class="modal-layer is-hidden" id="outfitModal" aria-label="Outfit selection">
+        <div class="modal modal--wide" role="dialog" aria-modal="true" aria-labelledby="outfitTitle">
+          <div class="modal__badge">Surprise Time</div>
+          <h2 id="outfitTitle" class="modal__title handwritten">Choose your outfit, Bebo 👗✨</h2>
+
+          <div class="outfit-grid" id="outfitGrid" aria-label="Outfit options"></div>
+
+          <p class="modal__hint tiny">
+            Tip: On mobile, it’ll try to “share” the selected outfit image to WhatsApp if your phone supports it.
+          </p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__line">Made with love, courage &amp; a sorry heart 💖</div>
+      </footer>
+    </main>
+
+    <div class="veil is-hidden" id="fadeVeil" aria-hidden="true"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>
