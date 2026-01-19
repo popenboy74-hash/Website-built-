@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>For Ariba — A Love Letter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient"></div>
+    <div class="sparkle-layer"></div>
+    <div class="floating-hearts" aria-hidden="true"></div>
+    <div id="fireworks-container" aria-hidden="true"></div>
+
+    <audio id="bg-music" preload="auto" loop>
+      <source
+        src="https://cdn.pixabay.com/download/audio/2022/10/03/audio_59b6ed5d3e.mp3?filename=emotional-piano-music-120687.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <button class="music-toggle" id="music-toggle" aria-label="Toggle music">
+      <span class="music-icon">♫</span>
+      <span class="music-label">Music Off</span>
+    </button>
+
+    <main id="app">
+      <section id="scene-1" class="scene active">
+        <div class="modal glass">
+          <p class="eyebrow handwritten">My Bebo 🥺💖</p>
+          <h1 class="headline">Are you sad with me?</h1>
+          <p class="tease-text" id="tease-text">Hehe 😜 don’t lieee~</p>
+          <div class="btn-row playful-area" id="playful-area">
+            <button class="btn btn-primary" id="yes-btn">YES 😔</button>
+            <button class="btn btn-ghost" id="no-btn">NO 😌</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-2" class="scene">
+        <div class="modal glass bounce-in">
+          <h2 class="headline">That’s why you are MY BEBO 💗✨</h2>
+          <button class="btn btn-primary" id="okay-btn">Okay 💞</button>
+        </div>
+      </section>
+
+      <section id="scene-3" class="scene">
+        <div class="letter-card glass">
+          <h2 class="handwritten">Hey my Ariba 💕,</h2>
+          <p class="letter-text">
+I know I spoke rudely,  
+and I know it hurt you…  
+and for that, I am truly sorry 🥺💔
+
+You are not just someone I love,  
+you are someone I care for deeply 🌷  
+Every smile of yours matters to me,  
+every tear of yours breaks me inside.
+
+Sometimes I act stupid,  
+sometimes I speak without thinking 😞  
+but please believe me —  
+my heart never wants to hurt YOU.
+
+You are my comfort,  
+my peace,  
+my favorite person 💖✨
+
+If I could, I would:
+✔️ Take back my words  
+✔️ Hold your hands tightly  
+✔️ Say sorry while looking into your eyes  
+
+Thank you for being patient with me,  
+thank you for being MY BEBO 💫
+
+I love you… more than my ego,  
+more than my mistakes,  
+more than my pride 🥹💗
+          </p>
+          <button class="btn btn-glow" id="surprise-btn">
+            Open Your Surprise 🎁
+          </button>
+        </div>
+      </section>
+
+      <section id="scene-4" class="scene scene-grid">
+        <div class="scene-header">
+          <p class="eyebrow handwritten">A little surprise for you 💫</p>
+          <h2 class="headline">Pick a gift box</h2>
+        </div>
+        <div class="gift-grid" id="gift-grid">
+          <button class="gift-box" aria-label="Gift 1">
+            <span class="gift-lid"></span>
+            <span class="gift-ribbon"></span>
+            <span class="gift-bow"></span>
+          </button>
+          <button class="gift-box" aria-label="Gift 2">
+            <span class="gift-lid"></span>
+            <span class="gift-ribbon"></span>
+            <span class="gift-bow"></span>
+          </button>
+          <button class="gift-box" aria-label="Gift 3">
+            <span class="gift-lid"></span>
+            <span class="gift-ribbon"></span>
+            <span class="gift-bow"></span>
+          </button>
+          <button class="gift-box" aria-label="Gift 4">
+            <span class="gift-lid"></span>
+            <span class="gift-ribbon"></span>
+            <span class="gift-bow"></span>
+          </button>
+          <button class="gift-box" aria-label="Gift 5">
+            <span class="gift-lid"></span>
+            <span class="gift-ribbon"></span>
+            <span class="gift-bow"></span>
+          </button>
+          <button class="gift-box" aria-label="Gift 6">
+            <span class="gift-lid"></span>
+            <span class="gift-ribbon"></span>
+            <span class="gift-bow"></span>
+          </button>
+          <button class="gift-box" aria-label="Gift 7">
+            <span class="gift-lid"></span>
+            <span class="gift-ribbon"></span>
+            <span class="gift-bow"></span>
+          </button>
+          <button class="gift-box" aria-label="Gift 8">
+            <span class="gift-lid"></span>
+            <span class="gift-ribbon"></span>
+            <span class="gift-bow"></span>
+          </button>
+          <button class="gift-box" aria-label="Gift 9">
+            <span class="gift-lid"></span>
+            <span class="gift-ribbon"></span>
+            <span class="gift-bow"></span>
+          </button>
+        </div>
+      </section>
+
+      <div class="overlay-message" id="gift-message" role="dialog">
+        <div class="modal glass">
+          <p class="headline">I was kidding 😜</p>
+          <p class="message-text">Every box has the same surprise 💖</p>
+          <p class="message-text">
+            🎉 YOU WON A COMPLETE OUTFIT 🎉
+          </p>
+        </div>
+      </div>
+
+      <div class="overlay-message" id="outfit-modal" role="dialog">
+        <div class="modal glass outfit-modal">
+          <h2 class="headline">Choose your outfit, Bebo 👗✨</h2>
+          <div class="outfit-grid">
+            <button
+              class="outfit-card"
+              data-name="Outfit 1"
+              data-image="assets/outfits/outfit-1.svg"
+            >
+              <img src="assets/outfits/outfit-1.svg" alt="Outfit 1 placeholder" />
+              <span>Outfit 1</span>
+            </button>
+            <button
+              class="outfit-card"
+              data-name="Outfit 2"
+              data-image="assets/outfits/outfit-2.svg"
+            >
+              <img src="assets/outfits/outfit-2.svg" alt="Outfit 2 placeholder" />
+              <span>Outfit 2</span>
+            </button>
+            <button
+              class="outfit-card"
+              data-name="Outfit 3"
+              data-image="assets/outfits/outfit-3.svg"
+            >
+              <img src="assets/outfits/outfit-3.svg" alt="Outfit 3 placeholder" />
+              <span>Outfit 3</span>
+            </button>
+            <button
+              class="outfit-card"
+              data-name="Outfit 4"
+              data-image="assets/outfits/outfit-4.svg"
+            >
+              <img src="assets/outfits/outfit-4.svg" alt="Outfit 4 placeholder" />
+              <span>Outfit 4</span>
+            </button>
+            <button
+              class="outfit-card"
+              data-name="Outfit 5"
+              data-image="assets/outfits/outfit-5.svg"
+            >
+              <img src="assets/outfits/outfit-5.svg" alt="Outfit 5 placeholder" />
+              <span>Outfit 5</span>
+            </button>
+            <button
+              class="outfit-card"
+              data-name="Outfit 6"
+              data-image="assets/outfits/outfit-6.svg"
+            >
+              <img src="assets/outfits/outfit-6.svg" alt="Outfit 6 placeholder" />
+              <span>Outfit 6</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      Made with love, courage &amp; a sorry heart 💖
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.7/dist/fireworks.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
