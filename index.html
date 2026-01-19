@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For My Bebo 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <!-- Sparkles Container -->
+    <div class="sparkles-container" id="sparklesContainer"></div>
+    
+    <!-- Cursor Trail -->
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <!-- Music Toggle Button -->
+    <button class="music-toggle" id="musicToggle" aria-label="Toggle Music">
+        <span class="music-icon">🎵</span>
+        <span class="music-status">OFF</span>
+    </button>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ========== SCENE 1: Playful Pop-up ========== -->
+    <div class="scene scene-1 active" id="scene1">
+        <div class="modal-overlay">
+            <div class="modal-card popup-modal">
+                <div class="modal-hearts">💖</div>
+                <h2 class="modal-title">My Bebo 🥺💖</h2>
+                <p class="modal-text">Are you sad with me?</p>
+                <p class="teasing-text" id="teasingText"></p>
+                <div class="button-container">
+                    <button class="btn btn-yes" id="btnYes">YES 😔</button>
+                    <button class="btn btn-no" id="btnNo">NO 😌</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SCENE 2: Affection Pop-up ========== -->
+    <div class="scene scene-2" id="scene2">
+        <div class="modal-overlay">
+            <div class="modal-card affection-modal">
+                <div class="sparkle-burst">✨</div>
+                <h2 class="modal-title affection-title">That's why you are</h2>
+                <h1 class="bebo-title">MY BEBO 💗✨</h1>
+                <button class="btn btn-okay" id="btnOkay">Okay 💞</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SCENE 3: Apology Letter ========== -->
+    <div class="scene scene-3" id="scene3">
+        <div class="letter-container">
+            <div class="letter-card" id="letterCard">
+                <div class="letter-header">
+                    <span class="letter-heart">💕</span>
+                </div>
+                <div class="letter-content">
+                    <p class="letter-greeting">Hey my Ariba 💕,</p>
+                    
+                    <p class="letter-para">
+                        I know I spoke rudely,<br>
+                        and I know it hurt you…<br>
+                        and for that, I am truly sorry 🥺💔
+                    </p>
+                    
+                    <p class="letter-para">
+                        You are not just someone I love,<br>
+                        you are someone I care for deeply 🌷<br>
+                        Every smile of yours matters to me,<br>
+                        every tear of yours breaks me inside.
+                    </p>
+                    
+                    <p class="letter-para">
+                        Sometimes I act stupid,<br>
+                        sometimes I speak without thinking 😞<br>
+                        but please believe me —<br>
+                        my heart never wants to hurt YOU.
+                    </p>
+                    
+                    <p class="letter-para highlight">
+                        You are my comfort,<br>
+                        my peace,<br>
+                        my favorite person 💖✨
+                    </p>
+                    
+                    <p class="letter-para">
+                        If I could, I would:<br>
+                        <span class="checklist">✔️ Take back my words</span><br>
+                        <span class="checklist">✔️ Hold your hands tightly</span><br>
+                        <span class="checklist">✔️ Say sorry while looking into your eyes</span>
+                    </p>
+                    
+                    <p class="letter-para">
+                        Thank you for being patient with me,<br>
+                        thank you for being MY BEBO 💫
+                    </p>
+                    
+                    <p class="letter-closing">
+                        I love you… more than my ego,<br>
+                        more than my mistakes,<br>
+                        more than my pride 🥹💗
+                    </p>
+                </div>
+                <button class="btn btn-surprise" id="btnSurprise">
+                    <span class="gift-icon">🎁</span>
+                    Open Your Surprise
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SCENE 4: Gift Game ========== -->
+    <div class="scene scene-4" id="scene4">
+        <div class="gift-section">
+            <h2 class="gift-title">Pick a Gift Box, Bebo! 🎁✨</h2>
+            <p class="gift-subtitle">Each one holds a special surprise~</p>
+            <div class="gift-grid" id="giftGrid">
+                <div class="gift-box" data-id="1">
+                    <div class="gift-box-inner">
+                        <div class="gift-lid">🎀</div>
+                        <div class="gift-base">🎁</div>
+                    </div>
+                </div>
+                <div class="gift-box" data-id="2">
+                    <div class="gift-box-inner">
+                        <div class="gift-lid">🎀</div>
+                        <div class="gift-base">🎁</div>
+                    </div>
+                </div>
+                <div class="gift-box" data-id="3">
+                    <div class="gift-box-inner">
+                        <div class="gift-lid">🎀</div>
+                        <div class="gift-base">🎁</div>
+                    </div>
+                </div>
+                <div class="gift-box" data-id="4">
+                    <div class="gift-box-inner">
+                        <div class="gift-lid">🎀</div>
+                        <div class="gift-base">🎁</div>
+                    </div>
+                </div>
+                <div class="gift-box" data-id="5">
+                    <div class="gift-box-inner">
+                        <div class="gift-lid">🎀</div>
+                        <div class="gift-base">🎁</div>
+                    </div>
+                </div>
+                <div class="gift-box" data-id="6">
+                    <div class="gift-box-inner">
+                        <div class="gift-lid">🎀</div>
+                        <div class="gift-base">🎁</div>
+                    </div>
+                </div>
+                <div class="gift-box" data-id="7">
+                    <div class="gift-box-inner">
+                        <div class="gift-lid">🎀</div>
+                        <div class="gift-base">🎁</div>
+                    </div>
+                </div>
+                <div class="gift-box" data-id="8">
+                    <div class="gift-box-inner">
+                        <div class="gift-lid">🎀</div>
+                        <div class="gift-base">🎁</div>
+                    </div>
+                </div>
+                <div class="gift-box" data-id="9">
+                    <div class="gift-box-inner">
+                        <div class="gift-lid">🎀</div>
+                        <div class="gift-base">🎁</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gift Result Modal -->
+        <div class="gift-result-modal" id="giftResultModal">
+            <div class="gift-result-card">
+                <div class="confetti-emoji">🎉</div>
+                <h2 class="result-title">I was kidding 😜</h2>
+                <p class="result-text">Every box has the same surprise 💖</p>
+                <div class="result-prize">
+                    <span class="prize-emoji">🎉</span>
+                    <span class="prize-text">YOU WON A COMPLETE OUTFIT</span>
+                    <span class="prize-emoji">🎉</span>
+                </div>
+                <button class="btn btn-continue" id="btnContinue">See Outfits 👗✨</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SCENE 5: Outfit Selection ========== -->
+    <div class="scene scene-5" id="scene5">
+        <div class="outfit-section">
+            <h2 class="outfit-title">Choose your outfit, Bebo 👗✨</h2>
+            <p class="outfit-subtitle">Pick your favorite and it's yours!</p>
+            <div class="outfit-grid" id="outfitGrid">
+                <div class="outfit-card" data-outfit="1">
+                    <div class="outfit-image">
+                        <img src="https://i.pinimg.com/736x/f9/77/3f/f9773f6261ebcdbaa1fc2bf53e5dc7c9.jpg" alt="Outfit 1">
+                    </div>
+                    <p class="outfit-name">Elegant Grey Saree ✨</p>
+                </div>
+                <div class="outfit-card" data-outfit="2">
+                    <div class="outfit-image">
+                        <img src="https://i.pinimg.com/736x/99/f1/b7/99f1b762ad7fdafbd6c0c69e1ce1e80f.jpg" alt="Outfit 2">
+                    </div>
+                    <p class="outfit-name">Blue Dream Saree 💙</p>
+                </div>
+                <div class="outfit-card" data-outfit="3">
+                    <div class="outfit-image">
+                        <img src="https://i.pinimg.com/736x/a9/db/15/a9db15e60a59be59e6eeaa3af06c8e66.jpg" alt="Outfit 3">
+                    </div>
+                    <p class="outfit-name">Vintage Brown 🤎</p>
+                </div>
+                <div class="outfit-card" data-outfit="4">
+                    <div class="outfit-image">
+                        <img src="https://i.pinimg.com/736x/73/36/d1/7336d19c3ee07ec68b5f2e1aafed2cd2.jpg" alt="Outfit 4">
+                    </div>
+                    <p class="outfit-name">Navy & White 💫</p>
+                </div>
+                <div class="outfit-card" data-outfit="5">
+                    <div class="outfit-image">
+                        <img src="https://i.pinimg.com/736x/98/e9/79/98e979a72af22f18f2ef18bba9ea73bc.jpg" alt="Outfit 5">
+                    </div>
+                    <p class="outfit-name">Sky Blue Elegance 🦋</p>
+                </div>
+                <div class="outfit-card" data-outfit="6">
+                    <div class="outfit-image">
+                        <img src="https://i.pinimg.com/736x/ae/f9/e9/aef9e9da94a74aa6b46f51ddf0e5f0ff.jpg" alt="Outfit 6">
+                    </div>
+                    <p class="outfit-name">Soft Blue Casual 💕</p>
+                </div>
+                <div class="outfit-card" data-outfit="7">
+                    <div class="outfit-image">
+                        <img src="https://i.pinimg.com/736x/27/be/ba/27bebaeab0ee79b1b73d3a2f3aa2f86e.jpg" alt="Outfit 7">
+                    </div>
+                    <p class="outfit-name">Olive Casual 🌿</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FINAL: Redirect Screen ========== -->
+    <div class="scene scene-final" id="sceneFinal">
+        <div class="final-content">
+            <div class="heart-animation">💕</div>
+            <h2 class="final-title">Sending all my love to you...</h2>
+            <p class="final-text">Wait a moment, Bebo 💖</p>
+            <div class="loading-hearts">
+                <span>💗</span>
+                <span>💖</span>
+                <span>💕</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <p>Made with love, courage & a sorry heart 💖</p>
+    </footer>
+
+    <!-- Fireworks Canvas -->
+    <canvas id="fireworksCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
