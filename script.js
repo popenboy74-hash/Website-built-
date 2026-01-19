@@ -208,6 +208,7 @@ const showGiftMessage = () => {
 };
 
 const showOutfitModal = () => {
+  giftMessage.classList.remove("show");
   outfitModal.classList.add("show");
   gsap.fromTo(
     outfitModal.querySelector(".modal"),
