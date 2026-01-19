@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Bebo 💖</title>
+    <meta property="og:title" content="For My Bebo 💖">
+    <meta property="og:description" content="A special surprise for you...">
+    <meta property="og:image" content="https://img.icons8.com/fluency/96/love-heart.png">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- Background Elements -->
+    <div class="background-container">
+        <div class="floating-heart" style="left: 10%; animation-delay: 0s;">💖</div>
+        <div class="floating-heart" style="left: 30%; animation-delay: 2s;">✨</div>
+        <div class="floating-heart" style="left: 70%; animation-delay: 4s;">🌸</div>
+        <div class="floating-heart" style="left: 90%; animation-delay: 1s;">💕</div>
+    </div>
+
+    <!-- Music Control -->
+    <div class="music-control" id="music-toggle">
+        <span class="icon">🔇</span>
+        <span class="text">Play Music</span>
+    </div>
+    <audio id="bg-music" loop>
+        <source src="https://pixabay.com/music/beautiful-plays-romantic-piano-music-18985/download?filename=romantic-piano-music-18985.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Scene 1: Playful Pop-up -->
+    <div id="scene-1" class="scene active">
+        <div class="modal glass-card">
+            <h1>My Bebo 🥺💖</h1>
+            <p>Are you sad with me?</p>
+            <div class="buttons">
+                <button id="btn-yes" class="btn-primary">YES 😔</button>
+                <button id="btn-no" class="btn-secondary">NO 😌</button>
+            </div>
+            <p id="teasing-text" class="hidden">Hehe 😜 don’t lieee~</p>
+        </div>
+    </div>
+
+    <!-- Scene 2: Affection Pop-up -->
+    <div id="scene-2" class="scene hidden">
+        <div class="modal glass-card">
+            <h1>That’s why you are MY BEBO 💗✨</h1>
+            <button id="btn-okay" class="btn-primary">Okay 💞</button>
+        </div>
+    </div>
+
+    <!-- Scene 3: Apology Letter -->
+    <div id="scene-3" class="scene hidden">
+        <div class="letter-container glass-card">
+            <div class="letter-content">
+                <h2>Hey my Ariba 💕,</h2>
+                <p>
+                    I know I spoke rudely,<br>
+                    and I know it hurt you…<br>
+                    and for that, I am truly sorry 🥺💔
+                </p>
+                <p>
+                    You are not just someone I love,<br>
+                    you are someone I care for deeply 🌷<br>
+                    Every smile of yours matters to me,<br>
+                    every tear of yours breaks me inside.
+                </p>
+                <p>
+                    Sometimes I act stupid,<br>
+                    sometimes I speak without thinking 😞<br>
+                    but please believe me —<br>
+                    my heart never wants to hurt YOU.
+                </p>
+                <p>
+                    You are my comfort,<br>
+                    my peace,<br>
+                    my favorite person 💖✨
+                </p>
+                <div class="checklist">
+                    <p>If I could, I would:</p>
+                    <ul>
+                        <li>✔️ Take back my words</li>
+                        <li>✔️ Hold your hands tightly</li>
+                        <li>✔️ Say sorry while looking into your eyes</li>
+                    </ul>
+                </div>
+                <p>
+                    Thank you for being patient with me,<br>
+                    thank you for being MY BEBO 💫
+                </p>
+                <p class="love-note">
+                    I love you… more than my ego,<br>
+                    more than my mistakes,<br>
+                    more than my pride 🥹💗
+                </p>
+            </div>
+            <button id="btn-open-surprise" class="btn-glow">Open Your Surprise 🎁</button>
+        </div>
+    </div>
+
+    <!-- Scene 4: Gift Game -->
+    <div id="scene-4" class="scene hidden">
+        <div class="gift-grid">
+            <!-- 9 Gift Boxes -->
+            <div class="gift-box">🎁</div>
+            <div class="gift-box">🎁</div>
+            <div class="gift-box">🎁</div>
+            <div class="gift-box">🎁</div>
+            <div class="gift-box">🎁</div>
+            <div class="gift-box">🎁</div>
+            <div class="gift-box">🎁</div>
+            <div class="gift-box">🎁</div>
+            <div class="gift-box">🎁</div>
+        </div>
+        
+        <!-- Surprise Popup -->
+        <div id="surprise-popup" class="modal glass-card hidden">
+            <p>I was kidding 😜</p>
+            <p>Every box has the same surprise 💖</p>
+            <h2>🎉 YOU WON A COMPLETE OUTFIT 🎉</h2>
+        </div>
+    </div>
+
+    <!-- Scene 5: Outfit Selection -->
+    <div id="scene-5" class="scene hidden">
+        <div class="modal glass-card outfit-modal">
+            <h2>Choose your outfit, Bebo 👗✨</h2>
+            <div class="outfit-grid">
+                <div class="outfit-card" data-outfit="Outfit 1">
+                    <div class="placeholder-img">Outfit 1</div>
+                </div>
+                <div class="outfit-card" data-outfit="Outfit 2">
+                    <div class="placeholder-img">Outfit 2</div>
+                </div>
+                <div class="outfit-card" data-outfit="Outfit 3">
+                    <div class="placeholder-img">Outfit 3</div>
+                </div>
+                <div class="outfit-card" data-outfit="Outfit 4">
+                    <div class="placeholder-img">Outfit 4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        Made with love, courage & a sorry heart 💖
+    </footer>
+
+    <!-- Custom Cursor Trail Container -->
+    <div id="cursor-trail"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
